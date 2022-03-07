@@ -19,7 +19,7 @@ public class RequestingController {
     @GetMapping("userPics")
             public  @ResponseBody PicturesList someRequest() {
         String username = "diekinari";
-        String url = "http://localhost:8081/SwipeDrop/userPics/" + username;
+        String url = "https://localhost:8081/SwipeDrop/userPics/" + username;
         RestTemplate restTemplate = new RestTemplate();
         PicturesList responseEntity = restTemplate.getForObject(url, PicturesList.class);
         return responseEntity;
@@ -31,7 +31,7 @@ public class RequestingController {
         byte[] bytes = new byte[5];
         String fileName = "some.jpg";
 
-        String url = "http://localhost:8081/SwipeDrop/testUploadPics";
+        String url = "https://localhost:8081/SwipeDrop/testUploadPics";
         String username = "diekinari";
 
         RestTemplate restTemplate = new RestTemplate();
@@ -57,7 +57,7 @@ public class RequestingController {
         public  @ResponseBody  Image someRequest_3() {
             String fileName = "some.jpg";
             String username = "diekinari";
-            String url = "http://localhost:8081/SwipeDrop/getPics/" + username + "?fileName=" + fileName;
+            String url = "https://localhost:8081/SwipeDrop/getPics/" + username + "?fileName=" + fileName;
             RestTemplate restTemplate = new RestTemplate();
             Image responseEntity = restTemplate.getForObject(url, Image.class);
             return responseEntity;
